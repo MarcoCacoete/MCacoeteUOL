@@ -13,6 +13,9 @@ namespace CMP1903M_A01_2223
         public Pack()
         {
             //Initialise the card pack here
+
+            int[] pack = new int[51];
+
         }
 
         public static bool shuffleCardPack(int typeOfShuffle)

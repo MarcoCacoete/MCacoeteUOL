@@ -14,5 +14,37 @@ namespace CMP1903M_A01_2223
         //The 'set' methods for these properties could have some validation
         public int Value { get; set; }
         public int Suit { get; set; }
+
+        //constructor
+        public Card(int value, int suit)
+        {
+            string top4 = Convert.ToString(value);
+
+            if (value == 1)
+            {
+                top4 = "Ace";
+            }
+            if (value == 13)
+            {
+                top4 = "King";
+            }
+
+
+            if (value == 12)
+            {
+                top4 = "Queen";
+            }
+
+
+            if (value == 11)
+            {
+                top4 = "Jack";
+            }
+
+
+            Value = value;
+            Suit = suit;
+
+        }
     }
 }
