@@ -43,6 +43,7 @@ namespace CMP1903M_A01_2223
             {
                 pack.Add(card);
             }
+            
             Console.WriteLine("There are " + pack.Count + " cards in the pack.");
         }
 
@@ -56,11 +57,12 @@ namespace CMP1903M_A01_2223
         {
             Console.WriteLine("Card Dealt: " + this.pack.ElementAt(0));
             this.pack.Remove(this.pack.ElementAt(0));
-            Console.WriteLine("Only " + this.pack.Count + " cards remain.");
+            Console.WriteLine("Only " + this.pack.Count + " cards remain in the pack.");
             return null;
         }
         public List<Card> DealCard(int amount)
         {
+            Console.WriteLine("Dealing " + amount + " cards...");
             List<Card> cards = new List<Card>();
             for (int i = 0; i < amount; i++)
             {
@@ -71,7 +73,7 @@ namespace CMP1903M_A01_2223
             {
                 Console.WriteLine(card.ToString());
             }
-            Console.WriteLine("Only " + this.pack.Count + " cards remain.");
+            Console.WriteLine("Only " + this.pack.Count + " cards remain in the pack.");
             return cards;
         }
         public void PrintPack()
