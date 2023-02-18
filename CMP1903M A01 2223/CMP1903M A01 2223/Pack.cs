@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,12 +49,40 @@ namespace CMP1903M_A01_2223
             Console.WriteLine("There are " + pack.Count + " cards in the pack.");
         }
 
-        public static bool ShuffleCardPack(int typeOfShuffle)
+        public bool ShuffleCardPack(int typeOfShuffle)
         {
             //Shuffles the pack based on the type of shuffle
-
-            return false;
+            if (typeOfShuffle == 0)
+            {
+                List<Card> shufflePack = new List<Card>();
+                // Fisher-Yates Original
+                Console.WriteLine("Attempting a Fisher-Yates (Original) Shuffle");
+                int totalNumberOfCards = this.pack.Count;
+                Console.WriteLine("Current Card Total: " + totalNumberOfCards);
+                for (int i = 0; i < totalNumberOfCards; i++)
+                {
+                    Console.WriteLine("Current Shuffle Iteration:" + i);
+                    var rand = new Random();
+                    int randNumber = rand.Next(1, totalNumberOfCards);
+                    Console.WriteLine("Selected card number " + randNumber + " from pack.");
+                    shufflePack.Add(this.pack.ElementAt(randNumber));
+                    Console.WriteLine("Added " + this.pack.ElementAt(randNumber).ToString() + " to shuffled pack. Shuffled pack contains " + shufflePack.Count + " cards.");
+                    this.pack.RemoveAt(randNumber);
+                    totalNumberOfCards--;
+                }
+                foreach (Card card in shufflePack)
+                {
+                    this.pack.Add(card);
+                }
+                Console.WriteLine("Shuffled the deck.");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
         public Card Deal()
         {
             Console.WriteLine("Card Dealt: " + this.pack.ElementAt(0));

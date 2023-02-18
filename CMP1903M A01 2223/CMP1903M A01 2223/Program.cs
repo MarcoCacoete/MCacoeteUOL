@@ -24,6 +24,10 @@ namespace CMP1903M_A01_2223
             Console.ReadLine();
             pack.PrintPack();
             Console.ReadLine();
+            pack.ShuffleCardPack(0);
+            Console.ReadLine();
+            pack.PrintPack();
+            Console.ReadLine();
         }
     }
 }
