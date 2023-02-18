@@ -8,7 +8,7 @@ namespace CMP1903M_A01_2223
 {
     class Pack
     {
-        List<Card> pack;
+      /* List<Card> pack;
 
         public Pack()
         {
@@ -31,6 +31,9 @@ namespace CMP1903M_A01_2223
         public static List<Card> dealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
+      */
         }
     }
-}
+
+
+      
