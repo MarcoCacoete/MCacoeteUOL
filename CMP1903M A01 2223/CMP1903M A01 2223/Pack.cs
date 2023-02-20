@@ -8,12 +8,13 @@ namespace CMP1903M_A01_2223
 {
     class Pack
     {
-        List<Card> pack;
-
+        
+        
+        //constructor
         public Pack()
         {
             //Initialise the card pack here
-           public void packCreator(){ 
+           
 
             Card[] deck = new Card[52]; //empty array with 52 spaces for 52 card objects to be filled later
 
@@ -69,7 +70,7 @@ namespace CMP1903M_A01_2223
                        }*/
                     Console.ReadLine();
 
-                    return Pack;
+                    
                 }
 
             }
@@ -90,6 +91,6 @@ namespace CMP1903M_A01_2223
                   */
         }
     }
-}
+
 
       
