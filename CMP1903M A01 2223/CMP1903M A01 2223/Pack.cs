@@ -7,23 +7,17 @@ using System.Threading.Tasks;
 namespace CMP1903M_A01_2223
 {
     class Pack
-    {
-        
-        
+    {     
         //constructor
-        public Pack()
-        {
-            //Initialise the card pack here
-           
+        public  Pack()
+        {           
 
-            Card[] deck = new Card[52]; //empty array with 52 spaces for 52 card objects to be filled later
+            Card[] pack = new Card[52]; //empty array with 52 spaces for 52 card objects 
 
 
             int packSize = -1; //packsize iterator variable, starts at -1 to fit in array
                                //without going out of index
-
-
-            int suit = 0;
+            int suit = 0; //suit variable for second iteration
 
                 // Card pack generator
 
@@ -42,55 +36,86 @@ namespace CMP1903M_A01_2223
                             //Card card = new Card(value, suit);
 
                             packSize++;                                   //counter iterator for packsize to stop operation when pack is complete
-                            deck[packSize] = new Card(suitCards, suit);
-                            string testout = deck[packSize].ToString();
+                            pack[packSize] = new Card(suitCards, suit);
+                            string testout = pack[packSize].ToString();
                             Console.WriteLine(testout);
+                       
                         }
 
                     }
+                
 
-                    // Card c = new Card(value, suit);
+                }
+
+                // Card c = new Card(value, suit);
 
 
-                    /*foreach (Card card in deck)
+                /*foreach (Card card in deck)
 
-                         try
-                         {
-                             Console.WriteLine(card.ToString());
-                             // c.Card(value, suit);
-                             //Console.WriteLine("[{0}]", string.Join(", ", deck));
-                             //Console.WriteLine(suit);
-                             Console.WriteLine(packSize);
-                             Console.ReadLine();
+                     try
+                     {
+                         Console.WriteLine(card.ToString());
+                         // c.Card(value, suit);
+                         //Console.WriteLine("[{0}]", string.Join(", ", deck));
+                         //Console.WriteLine(suit);
+                         Console.WriteLine(packSize);
+                         Console.ReadLine();
 
-                         }
-                         catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                       }*/
-                    Console.ReadLine();
+                     }
+                     catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                   }*/
+                Console.ReadLine();
 
                     
                 }
 
             }
-            /*
-                    public static bool shuffleCardPack(int typeOfShuffle)
-                    {
-                        //Shuffles the pack based on the type of shuffle
 
-                    }
-                    public static Card deal()
-                    {
-                        //Deals one card
+        public static bool shuffleCardPack(int typeOfShuffle)
+        {
+            //Shuffles the pack based on the type of shuffle
 
-                    }
-                    public static List<Card> dealCard(int amount)
-                    {
-                        //Deals the number of cards specified by 'amount'
-                  */
+            /*  if (shuffleType == 2)
+              {
+
+
+                  int[] shuffle()
+                  {
+
+                      for (int i = pack.Length; i > 1; i--)
+                      {
+                          int j = Random.Next(i);
+                          int temp = cards[j];
+                          cards[j] = cards[i - 1];
+                          cards[i - 1] = temp;
+                      }
+                      return cards;
+                  }
+
+                  int[] deal(int N)
+                  {
+                      int[] result = new int[N];
+                      Array.Copy(shuffle(), 0, result, N);
+                      return result;
+                  }
+              }
+                  }
+                      public static Card deal()
+                      {
+                          //Deals one card
+
+                      }
+                      public static List<Card> dealCard(int amount)
+                      {
+                          //Deals the number of cards specified by 'amount'
+                    */
+            Console.WriteLine("I can shuffle now Dave");
+            return true;
         }
     }
+}
 
 
       
