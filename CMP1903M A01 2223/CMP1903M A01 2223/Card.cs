@@ -75,5 +75,15 @@ namespace CMP1903M_A01_2223
             Value = cardVal;
             Suit = suitVal;
         }
+        
+    }
+    public static class CardExtension
+    {
+        public static void Swap<T>(this List<T> list, int i, int j)
+        {
+            T temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
+        }
     }
 }

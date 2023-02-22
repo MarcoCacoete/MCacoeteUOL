@@ -16,7 +16,7 @@ namespace CMP1903M_A01_2223
         public void Create()
         {
             Card[] deck = new Card[52];
-            int j = 1;
+            /*int j = 1;
             for (int i = 0; i < 13; i++)
             {
                 deck[i] = new Card(j, 0);
@@ -39,10 +39,20 @@ namespace CMP1903M_A01_2223
             {
                 deck[i] = new Card(j, 3);
                 j++;
+            }*/
+            int k = 0;
+            for (int j = 0; j < 4; j++)
+            {
+                for (int i = 1; i < 14; i++)
+                {
+                    deck[k] = new Card(i, j);
+                    k++;
+                }
             }
             Console.WriteLine("There are " + deck.Length + " cards on the table. Putting them into a pack...");
             foreach (Card card in deck)
             {
+                Console.WriteLine("Adding " + card + ".");
                 pack.Add(card);
             }
             
@@ -54,25 +64,14 @@ namespace CMP1903M_A01_2223
             //Shuffles the pack based on the type of shuffle
             if (typeOfShuffle == 0)
             {
-                List<Card> shufflePack = new List<Card>();
-                // Fisher-Yates Original
-                Console.WriteLine("Attempting a Fisher-Yates (Original) Shuffle");
-                int totalNumberOfCards = this.pack.Count;
-                Console.WriteLine("Current Card Total: " + totalNumberOfCards);
-                for (int i = 0; i < totalNumberOfCards; i++)
+                // Fisher-Yates
+                Console.WriteLine("Attempting a Fisher-Yates Shuffle...");
+                Random randNo = new Random();
+                for (int i = this.pack.Count - 1; i > 0; i--)
                 {
-                    Console.WriteLine("Current Shuffle Iteration:" + i);
-                    var rand = new Random();
-                    int randNumber = rand.Next(1, totalNumberOfCards);
-                    Console.WriteLine("Selected card number " + randNumber + " from pack.");
-                    shufflePack.Add(this.pack.ElementAt(randNumber));
-                    Console.WriteLine("Added " + this.pack.ElementAt(randNumber).ToString() + " to shuffled pack. Shuffled pack contains " + shufflePack.Count + " cards.");
-                    this.pack.RemoveAt(randNumber);
-                    totalNumberOfCards--;
-                }
-                foreach (Card card in shufflePack)
-                {
-                    this.pack.Add(card);
+                    int j = randNo.Next(i + 1);
+                    this.pack.Swap(i, j);
+                    
                 }
                 Console.WriteLine("Shuffled the deck.");
                 return true;
@@ -116,3 +115,4 @@ namespace CMP1903M_A01_2223
         }
     }
 }
+
