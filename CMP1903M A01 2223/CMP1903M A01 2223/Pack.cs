@@ -90,9 +90,9 @@ namespace CMP1903M_A01_2223
 
             }
 
-            foreach(int card in cardPack)
+            foreach (Card card in cardPack)
             {
-                Console.WriteLine(cardPack[card]);
+                Console.WriteLine(card.ToString());
             }
             Console.WriteLine("I can shuffle now Dave");
             Console.ReadLine();
@@ -111,4 +111,5 @@ namespace CMP1903M_A01_2223
         }
     }
 }
+
       
