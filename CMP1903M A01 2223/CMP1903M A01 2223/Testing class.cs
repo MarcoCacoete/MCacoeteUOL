@@ -30,6 +30,31 @@ namespace CMP1903M_A01_2223
 
                 pack.shuffleCardPack(typeOfShuffle);
 
+                Console.WriteLine("Would you like to deal? y/n ");
+
+                string dealChoice = Console.ReadLine();
+
+                if (dealChoice == "y")
+                {
+
+                    Console.WriteLine("Would hou like to deal 1 card or many cards? ");
+                    Console.WriteLine("1: One. ");
+                    Console.WriteLine("2: Many cards. ");
+                    int typeOfDeal = Convert.ToInt32(Console.ReadLine());
+                    if(typeOfDeal == 1)
+                    {
+                        pack.deal();
+                    }
+                    else
+                    {
+                        Console.WriteLine("How many cards should be dealt? ");
+                        int numberDealt = Convert.ToInt32(Console.ReadLine());
+                        pack.dealCard(numberDealt);
+                    }
+                }
+
+                
+
 
                 Console.ReadLine();
 

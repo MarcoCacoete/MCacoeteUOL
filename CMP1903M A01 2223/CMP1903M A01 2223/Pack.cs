@@ -53,13 +53,13 @@ namespace CMP1903M_A01_2223
         public bool shuffleCardPack(int typeOfShuffle)
         {
             //Shuffles the pack based on the type of shuffle
-            Console.WriteLine(this.cardPack.Count);
+            //Console.WriteLine(this.cardPack.Count);
 
             List<Card> checksum = new List<Card>();
 
             int counter = 0;
 
-            while (checksum.Count<52)
+            while (checksum.Count < 52)
             {
 
                 int r = rnd.Next(cardPack.Count);
@@ -74,19 +74,13 @@ namespace CMP1903M_A01_2223
                     checksum.Add(value);
 
                     cardPack.Add(value);
-                    
+
                     counter++;
 
                 }
 
-                else
-                {
-                    continue;
-                }
-
-               // string testout = cardPack.ElementAt(counter).ToString();
-               // Console.WriteLine(testout);
-
+                // string testout = cardPack.ElementAt(counter).ToString();
+                // Console.WriteLine(testout);
 
             }
 
@@ -94,21 +88,77 @@ namespace CMP1903M_A01_2223
             {
                 Console.WriteLine(card.ToString());
             }
+
+            Console.WriteLine(cardPack.Count);
+
             Console.WriteLine("I can shuffle now Dave");
+
             Console.ReadLine();
+
             return true;
-            /* public static Card deal()
-             {
-                 //Deals one card
-
-             }
-             public static List<Card> dealCard(int amount)
-             {
-                 //Deals the number of cards specified by 'amount'
-             }*/
-
-
         }
+
+        List<Card> dealtCards = new List<Card>();
+
+        public Card deal()
+            {
+            //Deals one card
+
+            int r = rnd.Next(cardPack.Count);
+
+            Card value = cardPack[r];
+
+
+            cardPack.RemoveAt(r);
+
+            dealtCards.Add(value);
+
+            Console.WriteLine(value.ToString());
+
+            /*foreach (Card card in dealtCards)
+            {
+                Console.WriteLine(card.ToString());
+            }*/
+            
+            return value;
+            }
+                
+        public  List<Card> dealCard(int amount)
+            {
+            
+            //Deals the number of cards specified by 'amount'
+
+            while (amount > 0)
+            {
+                int r = rnd.Next(cardPack.Count);
+
+                Card value = cardPack[r];
+
+                if (!dealtCards.Contains(value))
+                {
+
+                    cardPack.RemoveAt(r);
+
+                    dealtCards.Add(value);
+                    amount--;
+                }
+
+                else if (cardPack.Count == 0)
+                {
+                    Console.WriteLine("No more cards to be dealt.");
+                }
+
+               
+            }
+            foreach (Card card in dealtCards)
+            {
+                Console.WriteLine(card.ToString());
+            }
+            return dealtCards;
+        } 
+
+
+        
     }
 }
 
