@@ -10,16 +10,10 @@ namespace CMP1903M_A01_2223
     class Pack
     {
         public List<Card> cardPack = new List<Card>();
-
-
         //constructor
         public Pack()
         {
-
-            Card[] pack = new Card[52]; //empty array with 52 spaces for 52 card objects 
-
-            
-
+            //Card[] pack = new Card[52]; //empty array with 52 spaces for 52 card objects 
             int packSize = -1; //packsize iterator variable, starts at -1 to fit in array
                                //without going out of index
             int suit = 0; //suit variable for second iteration
@@ -41,7 +35,7 @@ namespace CMP1903M_A01_2223
                         //Card card = new Card(value, suit);
 
                         packSize++;                                   //counter iterator for packsize to stop operation when pack is complete
-                       // pack[packSize] = new Card(suitCards, suit);
+                                                                      // pack[packSize] = new Card(suitCards, suit);
                         cardPack.Add(new Card(suitCards, suit));
 
 
@@ -49,72 +43,72 @@ namespace CMP1903M_A01_2223
                         Console.WriteLine(testout);
 
                     }
-
                 }
-
-
             }
-
-            // Card c = new Card(value, suit);
-
-
-            /*foreach (Card card in deck)
-
-                 try
-                 {
-                     Console.WriteLine(card.ToString());
-                     // c.Card(value, suit);
-                     //Console.WriteLine("[{0}]", string.Join(", ", deck));
-                     //Console.WriteLine(suit);
-                     Console.WriteLine(packSize);
-                     Console.ReadLine();
-
-                 }
-                 catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-               }*/
-            Console.ReadLine();
-
-
+            
         }
+
+        static Random rnd = new Random();
 
         public bool shuffleCardPack(int typeOfShuffle)
         {
             //Shuffles the pack based on the type of shuffle
-
             Console.WriteLine(this.cardPack.Count);
 
+            List<Card> checksum = new List<Card>();
 
-           /* if (typeOfShuffle == 1)
+            int counter = 0;
+
+            while (checksum.Count<52)
             {
-                var array = new int[] { 1, 2, 3, 4, 5, 6 };
-                var rnd = new Random();
-                for (int i = 0; i < array.Length - 1; i++)
+
+                int r = rnd.Next(cardPack.Count);
+
+                var value = cardPack[r];
+
+                if (!checksum.Contains(value))
                 {
-                    int j = i + rnd.Next(array.Length - i);
-                    var tmp = array[j];
-                    array[j] = array[i];
-                    array[i] = tmp;
+
+                    cardPack.RemoveAt(r);
+
+                    checksum.Add(value);
+
+                    cardPack.Add(value);
+                    
+                    counter++;
+
                 }
-                Console.WriteLine(array);
+
+                else
+                {
+                    continue;
+                }
+
+               // string testout = cardPack.ElementAt(counter).ToString();
+               // Console.WriteLine(testout);
+
 
             }
-        */
+
+            foreach(int card in cardPack)
+            {
+                Console.WriteLine(cardPack[card]);
+            }
             Console.WriteLine("I can shuffle now Dave");
             Console.ReadLine();
             return true;
+            /* public static Card deal()
+             {
+                 //Deals one card
+
+             }
+             public static List<Card> dealCard(int amount)
+             {
+                 //Deals the number of cards specified by 'amount'
+             }*/
+
+
         }
-        /* public static Card deal()
-         {
-             //Deals one card
-
-         }
-         public static List<Card> dealCard(int amount)
-         {
-             //Deals the number of cards specified by 'amount'
-         }*/
     }
-
 }
       

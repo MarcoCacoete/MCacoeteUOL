@@ -14,3 +14,11 @@ C:\Users\Marco Caçoete\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\
 C:\Users\Marco Caçoete\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.CoreCompileInputs.cache
 C:\Users\Marco Caçoete\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.exe
 C:\Users\Marco Caçoete\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.pdb
+C:\Users\Marco\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\bin\Debug\CMP1903M A01 2223.exe.config
+C:\Users\Marco\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\bin\Debug\CMP1903M A01 2223.exe
+C:\Users\Marco\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\bin\Debug\CMP1903M A01 2223.pdb
+C:\Users\Marco\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.AssemblyReference.cache
+C:\Users\Marco\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.SuggestedBindingRedirects.cache
+C:\Users\Marco\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.csproj.CoreCompileInputs.cache
+C:\Users\Marco\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.exe
+C:\Users\Marco\Source\Repos\MarcoCacoete\MCacoeteUOL\CMP1903M A01 2223\CMP1903M A01 2223\obj\Debug\CMP1903M A01 2223.pdb
