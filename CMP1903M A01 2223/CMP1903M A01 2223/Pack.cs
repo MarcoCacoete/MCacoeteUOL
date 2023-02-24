@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,12 +9,16 @@ namespace CMP1903M_A01_2223
 {
     class Pack
     {
+        public List<Card> cardPack = new List<Card>();
+
+
         //constructor
         public Pack()
         {
 
             Card[] pack = new Card[52]; //empty array with 52 spaces for 52 card objects 
 
+            
 
             int packSize = -1; //packsize iterator variable, starts at -1 to fit in array
                                //without going out of index
@@ -36,8 +41,11 @@ namespace CMP1903M_A01_2223
                         //Card card = new Card(value, suit);
 
                         packSize++;                                   //counter iterator for packsize to stop operation when pack is complete
-                        pack[packSize] = new Card(suitCards, suit);
-                        string testout = pack[packSize].ToString();
+                       // pack[packSize] = new Card(suitCards, suit);
+                        cardPack.Add(new Card(suitCards, suit));
+
+
+                        string testout = cardPack.ElementAt(packSize).ToString();
                         Console.WriteLine(testout);
 
                     }
@@ -71,11 +79,14 @@ namespace CMP1903M_A01_2223
 
         }
 
-        public static bool shuffleCardPack(int typeOfShuffle, Pack pack)
+        public bool shuffleCardPack(int typeOfShuffle)
         {
             //Shuffles the pack based on the type of shuffle
 
-            if (typeOfShuffle == 1)
+            Console.WriteLine(this.cardPack.Count);
+
+
+           /* if (typeOfShuffle == 1)
             {
                 var array = new int[] { 1, 2, 3, 4, 5, 6 };
                 var rnd = new Random();
@@ -89,7 +100,7 @@ namespace CMP1903M_A01_2223
                 Console.WriteLine(array);
 
             }
-
+        */
             Console.WriteLine("I can shuffle now Dave");
             Console.ReadLine();
             return true;

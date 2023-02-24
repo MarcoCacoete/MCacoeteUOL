@@ -26,10 +26,12 @@ namespace CMP1903M_A01_2223
                 Console.WriteLine("3: No shuffle. ");
                 int typeOfShuffle = Convert.ToInt32(Console.ReadLine());
 
-                Pack.shuffleCardPack(typeOfShuffle);
+                //pack.shuffleCardPack(typeOfShuffle);
+
+                pack.shuffleCardPack(typeOfShuffle);
 
 
-
+                Console.ReadLine();
 
             }
         }
