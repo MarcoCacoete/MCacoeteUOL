@@ -179,11 +179,19 @@ namespace CMP1903M_A01_2223
         }
         public void PrintPack()
         {
-            foreach(Card card in this.pack)
+            Console.WindowWidth = 100;
+            int counter = 0;
+            foreach (Card card in this.pack)
             {
-                Console.WriteLine(card.ToString());
+                Console.Write(card.ToString());
+                counter++;
+                if (counter % 5 == 0)
+                {
+                    Console.WriteLine();
+                }
             }
-            Console.WriteLine("There are " + this.pack.Count + " cards in the pack.");
+            Console.WriteLine("There are " + this.pack.Count + " cards in the pack. Press any key to continue.");
+            Console.ReadLine();
         }
     }
 }
