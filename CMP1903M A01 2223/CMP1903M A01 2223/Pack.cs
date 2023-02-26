@@ -104,12 +104,10 @@ namespace CMP1903M_A01_2223
             {
             //Deals one card
 
-            int r = rnd.Next(cardPack.Count);
-
-            Card value = cardPack[r];
+            Card value = cardPack[0];
 
 
-            cardPack.RemoveAt(r);
+            cardPack.RemoveAt(0);
 
             dealtCards.Add(value);
 
@@ -130,14 +128,13 @@ namespace CMP1903M_A01_2223
 
             while (amount > 0)
             {
-                int r = rnd.Next(cardPack.Count);
-
-                Card value = cardPack[r];
+                
+                Card value = cardPack[0];
 
                 if (!dealtCards.Contains(value))
                 {
 
-                    cardPack.RemoveAt(r);
+                    cardPack.RemoveAt(0);
 
                     dealtCards.Add(value);
                     amount--;
