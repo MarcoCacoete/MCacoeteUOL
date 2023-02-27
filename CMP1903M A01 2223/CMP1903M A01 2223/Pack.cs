@@ -55,46 +55,53 @@ namespace CMP1903M_A01_2223
             //Shuffles the pack based on the type of shuffle
             //Console.WriteLine(this.cardPack.Count);
 
-            List<Card> checksum = new List<Card>();
-
-            int counter = 0;
-
-            while (checksum.Count < 52)
+            if (typeOfShuffle == 1)
             {
 
-                int r = rnd.Next(cardPack.Count);
+                List<Card> checksum = new List<Card>();
 
-                var value = cardPack[r];
+                int counter = 0;
 
-                if (!checksum.Contains(value))
+                while (checksum.Count < 52)
                 {
 
-                    cardPack.RemoveAt(r);
+                    int r = rnd.Next(cardPack.Count);
 
-                    checksum.Add(value);
+                    var value = cardPack[r];
 
-                    cardPack.Add(value);
+                    if (!checksum.Contains(value))
+                    {
 
-                    counter++;
+                        cardPack.RemoveAt(r);
+
+                        checksum.Add(value);
+
+                        cardPack.Add(value);
+
+                        counter++;
+
+                    }
+
+                    // string testout = cardPack.ElementAt(counter).ToString();
+                    // Console.WriteLine(testout);
 
                 }
 
-                // string testout = cardPack.ElementAt(counter).ToString();
-                // Console.WriteLine(testout);
+                foreach (Card card in cardPack)
+                {
+                    Console.WriteLine(card.ToString());
+                }
 
+                Console.WriteLine(cardPack.Count);
+
+                Console.WriteLine("I can shuffle now Dave");
+
+                Console.ReadLine();
             }
-
-            foreach (Card card in cardPack)
+            if(typeOfShuffle == 3)
             {
-                Console.WriteLine(card.ToString());
+                Console.WriteLine("Your deck is not shuffled.");
             }
-
-            Console.WriteLine(cardPack.Count);
-
-            Console.WriteLine("I can shuffle now Dave");
-
-            Console.ReadLine();
-
             return true;
         }
 
