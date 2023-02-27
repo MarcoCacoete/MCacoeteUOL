@@ -60,7 +60,7 @@ namespace CMP1903M_A01_2223
 
                 List<Card> checksum = new List<Card>();
 
-                int counter = 0;
+                int counter = -1;
 
                 while (checksum.Count < 52)
                 {
@@ -82,8 +82,8 @@ namespace CMP1903M_A01_2223
 
                     }
 
-                    // string testout = cardPack.ElementAt(counter).ToString();
-                    // Console.WriteLine(testout);
+                    string testout = cardPack.ElementAt(counter).ToString();
+                    Console.WriteLine(testout);
 
                 }
 
@@ -110,7 +110,7 @@ namespace CMP1903M_A01_2223
                     void riffle()
                     {
 
-                        int r = rnd.Next(0, 5);
+                        int r = rnd.Next(0, 6);
 
                         int counter1 = 21 + r;
                         int counter2 = 52 - counter1;
@@ -141,29 +141,44 @@ namespace CMP1903M_A01_2223
                         int iteratorLeft = 0;
                         int iteratorRight = 0;
                         iterator = 52;
+
                         while (iterator > 0)
                         {
+                            int coinFlip = rnd.Next(0, 2);
+
+
+
                             if (leftHand.Count > 0)
                             {
-                                if (iteratorLeft != leftHand.Count)
+                                if (coinFlip > 0)
                                 {
 
+                                    if (iteratorLeft != leftHand.Count)
+                                    {
 
-                                    cardPack.RemoveAt(0);
-                                    cardPack.Add(leftHand[iteratorLeft]);
-                                    iterator--;
-                                    iteratorLeft++;
+
+                                        cardPack.RemoveAt(0);
+                                        cardPack.Add(leftHand[iteratorLeft]);
+                                        iterator--;
+                                        iteratorLeft++;
+                                    }
                                 }
                             }
+
                             if (rightHand.Count > 0)
                             {
-                                if (iteratorRight != rightHand.Count)
+                                if (coinFlip == 0)
                                 {
 
-                                    cardPack.RemoveAt(0);
-                                    cardPack.Add(rightHand[iteratorRight]);
-                                    iterator--;
-                                    iteratorRight++;
+
+                                    if (iteratorRight != rightHand.Count)
+                                    {
+
+                                        cardPack.RemoveAt(0);
+                                        cardPack.Add(rightHand[iteratorRight]);
+                                        iterator--;
+                                        iteratorRight++;
+                                    }
                                 }
                             }
                         }
@@ -174,13 +189,15 @@ namespace CMP1903M_A01_2223
                         Console.WriteLine("count " + cardPack.Count);
                     }
                 }
-                if (typeOfShuffle == 3)
-                {
-                    Console.WriteLine("Your deck is not shuffled.");
-                }
-
             }
-            return true;
+
+            if (typeOfShuffle == 3)
+            {
+                Console.WriteLine("Your deck is not shuffled.");
+            }
+
+            
+        return true;
 
         }
 
@@ -197,12 +214,12 @@ namespace CMP1903M_A01_2223
 
             dealtCards.Add(value);
 
-            Console.WriteLine(value.ToString());
+            
 
-            /*foreach (Card card in dealtCards)
+            foreach (Card card in dealtCards)
             {
                 Console.WriteLine(card.ToString());
-            }*/
+            }
             
             return value;
             }
@@ -230,7 +247,6 @@ namespace CMP1903M_A01_2223
                 {
                     Console.WriteLine("No more cards to be dealt.");
                 }
-
                
             }
             foreach (Card card in dealtCards)

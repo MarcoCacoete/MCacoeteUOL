@@ -13,7 +13,6 @@ namespace CMP1903M_A01_2223
         static void Main(string[] args)
         {
 
-            //Pack pack = new Pack();
 
             test(); 
 
@@ -33,7 +32,14 @@ namespace CMP1903M_A01_2223
             if (optionsChoice == 1)
             {
 
+                shuffle();
+                deal();
 
+            }
+            
+
+            void shuffle()
+            {
                 Console.WriteLine("Which type of shuffle would you prefer? ");
                 Console.WriteLine("1: Yates. ");
                 Console.WriteLine("2: Riffle shuffle. ");
@@ -45,7 +51,11 @@ namespace CMP1903M_A01_2223
 
             }
 
-            if (optionsChoice == 2)
+                if (optionsChoice == 2)
+                {
+                    deal();
+                }
+            void deal()
             {
 
                 Console.WriteLine("Would hou like to deal 1 card or many cards? ");
@@ -64,15 +74,15 @@ namespace CMP1903M_A01_2223
                 }
                 else
                 {
-                    test();
+                        deal();
+                    }
+                    deal();
                 }
 
+            
+            
             }
-            else
-            { 
-                test();
-            }
-            }
+            Console.ReadLine();
         }
     }
 }
