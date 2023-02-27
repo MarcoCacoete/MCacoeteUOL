@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
-    class Pack
+    static class Pack
     {
-        public List<Card> cardPack = new List<Card>();
+        public static List<Card> cardPack = new List<Card>();
         //constructor
-        public Pack()
+        static Pack()
         {
             //Card[] pack = new Card[52]; //empty array with 52 spaces for 52 card objects 
             int packSize = -1; //packsize iterator variable, starts at -1 to fit in array
@@ -50,7 +50,7 @@ namespace CMP1903M_A01_2223
 
         static Random rnd = new Random();
 
-        public bool shuffleCardPack(int typeOfShuffle)
+        public static bool shuffleCardPack(int typeOfShuffle)
         {
             //Shuffles the pack based on the type of shuffle
             //Console.WriteLine(this.cardPack.Count);
@@ -98,16 +98,95 @@ namespace CMP1903M_A01_2223
 
                 Console.ReadLine();
             }
-            if(typeOfShuffle == 3)
+
+            if (typeOfShuffle == 2)
             {
-                Console.WriteLine("Your deck is not shuffled.");
+                int riffleCounter = 5;
+
+                while (riffleCounter > 0)
+                {
+                    riffle();
+                    riffleCounter--;
+                    void riffle()
+                    {
+
+                        int r = rnd.Next(0, 5);
+
+                        int counter1 = 21 + r;
+                        int counter2 = 52 - counter1;
+                        int iterator = -1;
+
+                        List<Card> leftHand = new List<Card>();
+                        List<Card> rightHand = new List<Card>();
+
+                        while (counter1 > 0)
+                        {
+                            iterator++;
+
+                            leftHand.Add(cardPack[iterator]);
+
+                            counter1--;
+                        }
+
+                        while (counter2 > 0)
+                        {
+                            iterator++;
+
+                            rightHand.Add(cardPack[iterator]);
+
+                            counter2--;
+                        }
+                        Console.WriteLine(iterator);
+                        Console.WriteLine(leftHand.Count + rightHand.Count);
+                        int iteratorLeft = 0;
+                        int iteratorRight = 0;
+                        iterator = 52;
+                        while (iterator > 0)
+                        {
+                            if (leftHand.Count > 0)
+                            {
+                                if (iteratorLeft != leftHand.Count)
+                                {
+
+
+                                    cardPack.RemoveAt(0);
+                                    cardPack.Add(leftHand[iteratorLeft]);
+                                    iterator--;
+                                    iteratorLeft++;
+                                }
+                            }
+                            if (rightHand.Count > 0)
+                            {
+                                if (iteratorRight != rightHand.Count)
+                                {
+
+                                    cardPack.RemoveAt(0);
+                                    cardPack.Add(rightHand[iteratorRight]);
+                                    iterator--;
+                                    iteratorRight++;
+                                }
+                            }
+                        }
+                        foreach (Card card in cardPack)
+                        {
+                            Console.WriteLine(card);
+                        }
+                        Console.WriteLine("count " + cardPack.Count);
+                    }
+                }
+                if (typeOfShuffle == 3)
+                {
+                    Console.WriteLine("Your deck is not shuffled.");
+                }
+
             }
             return true;
+
         }
 
-        List<Card> dealtCards = new List<Card>();
+        static List<Card> dealtCards = new List<Card>();
 
-        public Card deal()
+        public static Card deal()
             {
             //Deals one card
 
@@ -128,7 +207,7 @@ namespace CMP1903M_A01_2223
             return value;
             }
                 
-        public  List<Card> dealCard(int amount)
+        public static  List<Card> dealCard(int amount)
             {
             
             //Deals the number of cards specified by 'amount'

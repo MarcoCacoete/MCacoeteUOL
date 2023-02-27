@@ -13,7 +13,7 @@ namespace CMP1903M_A01_2223
         static void Main(string[] args)
         {
 
-            Pack pack = new Pack();
+            //Pack pack = new Pack();
 
             test(); 
 
@@ -41,7 +41,7 @@ namespace CMP1903M_A01_2223
 
                 int typeOfShuffle = Convert.ToInt32(Console.ReadLine());
 
-                pack.shuffleCardPack(typeOfShuffle);
+                Pack.shuffleCardPack(typeOfShuffle);
 
             }
 
@@ -54,13 +54,13 @@ namespace CMP1903M_A01_2223
                 int typeOfDeal = Convert.ToInt32(Console.ReadLine());
                 if (typeOfDeal == 1)
                 {
-                    pack.deal();
+                    Pack.deal();
                 }
                 if (typeOfDeal == 2)
                 {
                     Console.WriteLine("How many cards should be dealt? ");
                     int numberDealt = Convert.ToInt32(Console.ReadLine());
-                    pack.dealCard(numberDealt);
+                    Pack.dealCard(numberDealt);
                 }
                 else
                 {
