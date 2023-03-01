@@ -13,9 +13,8 @@ namespace CMP1903M_A01_2223
         //constructor
         static Pack()
         {
-            //Card[] pack = new Card[52]; //empty array with 52 spaces for 52 card objects 
-            int packSize = -1; //packsize iterator variable, starts at -1 to fit in array
-                               //without going out of index
+            int packSize = -1; //packsize iterator variable
+                               
             int suit = 0; //suit variable for second iteration
 
             // Card pack generator
@@ -43,9 +42,12 @@ namespace CMP1903M_A01_2223
                         Console.WriteLine(testout);
 
                     }
+                    
                 }
+                Console.WriteLine("Your created pack above.");
+                Console.WriteLine();
             }
-            
+
         }
 
         static Random rnd = new Random();
@@ -95,8 +97,10 @@ namespace CMP1903M_A01_2223
                 Console.WriteLine(cardPack.Count);
 
                 Console.WriteLine("I can shuffle now Dave");
+                Console.WriteLine();
 
-                Console.ReadLine();
+                Console.WriteLine("Your shuffled pack above.");
+                
             }
 
             if (typeOfShuffle == 2)
@@ -186,6 +190,12 @@ namespace CMP1903M_A01_2223
                         {
                             Console.WriteLine(card);
                         }
+                        Console.WriteLine("I can shuffle now Dave");
+                        Console.WriteLine();
+
+                        Console.WriteLine("Your shuffled pack above.");
+
+
                         Console.WriteLine("count " + cardPack.Count);
                     }
                 }
@@ -196,69 +206,74 @@ namespace CMP1903M_A01_2223
                 Console.WriteLine("Your deck is not shuffled.");
             }
 
-            
-        return true;
+
+            return true;
 
         }
 
         static List<Card> dealtCards = new List<Card>();
+        private static Card value;
 
         public static Card deal()
-            {
+        {
             //Deals one card
-
-            Card value = cardPack[0];
-
-
-            cardPack.RemoveAt(0);
-
-            dealtCards.Add(value);
-
-            
-
-            foreach (Card card in dealtCards)
+            try
             {
-                Console.WriteLine(card.ToString());
-            }
-            
-            return value;
-            }
-                
-        public static  List<Card> dealCard(int amount)
-            {
-            
-            //Deals the number of cards specified by 'amount'
 
-            while (amount > 0)
-            {
-                
                 Card value = cardPack[0];
 
-                if (!dealtCards.Contains(value))
+                cardPack.RemoveAt(0);
+
+                dealtCards.Add(value);
+
+                foreach (Card card in dealtCards)
                 {
+                    Console.WriteLine(card.ToString());
 
-                    cardPack.RemoveAt(0);
+                }
+                return value;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("No more cards to deal, goodbye Dave.");
+                Console.ReadLine();
+                Environment.Exit(0);
+                
 
-                    dealtCards.Add(value);
+
+            }
+            return value;
+        }
+
+        public static List<Card> dealCard(int amount)
+        {
+
+            //Deals the number of cards specified by 'amount'
+            try
+            {
+                while (amount > 0)
+                {
+                    Console.WriteLine("Your dealt cards so far.");
+
+
+                    Pack.deal();
                     amount--;
                 }
-
-                else if (cardPack.Count == 0)
-                {
-                    Console.WriteLine("No more cards to be dealt.");
-                }
-               
             }
-            foreach (Card card in dealtCards)
+            catch (Exception)
             {
-                Console.WriteLine(card.ToString());
+                Console.WriteLine("No more cards to be dealt, goodbye Dave");
+                Console.ReadLine();
+                Environment.Exit(0);
             }
             return dealtCards;
-        } 
+        }
+    }
+}
 
 
         
-    }
-}
+    
+
 
       
