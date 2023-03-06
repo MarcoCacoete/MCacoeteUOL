@@ -54,7 +54,7 @@ namespace CMP1903M_A01_2223
 
             return greeting;
         }
-        private static Player playerWelcome()          // Small method that is responsible for welcoming the player, and creating a player object with some arguments
+        private static Player playerWelcome()          // Small private method that is responsible for welcoming the player, and creating a player object with some arguments
         {
             Console.WriteLine("Welcome to the testing class.");
 

@@ -46,7 +46,7 @@ namespace CMP1903M_A01_2223
         private static Random rnd = new Random();
 
 
-        //Shuffles the pack based on the type of shuffle
+        // Executes one of 3 methods to shuffle based on the type of shuffle
         public static bool shuffleCardPack(int typeOfShuffle)
         {
 
@@ -71,7 +71,7 @@ namespace CMP1903M_A01_2223
                                                                        // Some objects are crated to be used by several methods
         private static Card value;
 
-        public static void dealer(int dealChoice,int amount)  // Small method added that accepts referals from testing class to access encapsulated methods
+        public static void dealer(int dealChoice,int amount)  // Small card dealing method added that accepts referals from testing class to access encapsulated methods
                                                               // depending on conditionals
         {
             if(dealChoice == 1)

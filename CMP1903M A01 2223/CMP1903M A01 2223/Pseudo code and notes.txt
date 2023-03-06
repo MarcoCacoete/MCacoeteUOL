@@ -1,13 +1,5 @@
 ﻿
 
-Once again my file with my pseudo code and notes got lost while trying to troubleshoot problems with Visual Studio and Github.
+Program is completed, not sure how much more I can add to it with my current skill level.
 
-
-To do:
-	- Figure out if I can keep the methods static and use gets to be able to supply the referenced objects or variables.
-	- Work out how to do the riffle shuffle.
-	- Get the testing class to work in a smooth way and not be forced to do all the steps before wanting to test individual parts of the code.
-	- Also need to polish all methods because they are barebones, need to put in place error handling for wrong inputs or for the program not accounting for something.
-
-
-
+Will revisit if I learn anything else that I might want to try and implement here.

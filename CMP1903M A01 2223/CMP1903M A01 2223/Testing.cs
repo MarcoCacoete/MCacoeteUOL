@@ -22,9 +22,9 @@ namespace CMP1903M_A01_2223
 
             welcome();                // Calls small function to welcome user to testing class,
 
-            void welcome()            // this is an example of abstraction because it reduces a more complex process to a simple method call
-            {                         // the end user is also only able to interact with the program through the interface that I set up without
-                                      // needing to know about inner workings
+            void welcome()                                       // this is an example of abstraction because it reduces a more complex process to a simple method call
+            {                                                    // the end user is also only able to interact with the program through the interface that I set up without
+                                                                 // needing to know about inner workings
                 Player testPlayer = Player.welcome();
             }
 

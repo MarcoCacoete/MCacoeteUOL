@@ -30,7 +30,7 @@ namespace CMP1903M_A01_2223
             get { return cardValue; }
             set { cardValue = value; }
         }
-        // gets and sets setup to keep give access to private variables, reinforcing the idea of encapsulation
+                                                     // gets and sets setup to keep give access to private variables, reinforcing the idea of encapsulation
         public int Suit
         {
             get { return cardSuit; }
