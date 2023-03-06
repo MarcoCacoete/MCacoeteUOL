@@ -45,11 +45,15 @@
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="Pack.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Testing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pseudo code and notes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
