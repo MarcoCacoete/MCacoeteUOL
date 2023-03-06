@@ -10,5 +10,4 @@ To do:
 	- Also need to polish all methods because they are barebones, need to put in place error handling for wrong inputs or for the program not accounting for something.
 
 
-	Email lecturer if I don't get an answer about the email I sent.
 
