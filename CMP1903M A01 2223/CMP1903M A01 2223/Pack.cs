@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
-     class Pack
+    class Pack
     {
         private static List<Card> cardPack = new List<Card>(); //encapsulation was used for this list of card objects
         //constructor
         static Pack()
-        { 
+        {
             int packSize = -1; // Packsize iterator variable
 
             int suit = 0; // Suit variable for second iteration
@@ -27,10 +27,10 @@ namespace CMP1903M_A01_2223
                     suit++;
                     while (suitCards < 13)
                     {
-                        suitCards++;                        
+                        suitCards++;
 
                         packSize++;                                   // Counter iterator for packsize to stop operation when pack is complete
-                                                                      
+
                         cardPack.Add(new Card(suitCards, suit));      // Adds card objects to card list                     
                     }
                 }
@@ -68,22 +68,22 @@ namespace CMP1903M_A01_2223
         }
 
         private static List<Card> dealtCards = new List<Card>();
-                                                                       // Some objects are crated to be used by several methods
+        // Some objects are crated to be used by several methods
         private static Card value;
 
-        public static void dealer(int dealChoice,int amount)  // Small card dealing method added that accepts referals from testing class to access encapsulated methods
-                                                              // depending on conditionals
+        public static void dealer(int dealChoice, int amount)  // Small card dealing method added that accepts referals from testing class to access encapsulated methods
+                                                               // depending on conditionals
         {
-            if(dealChoice == 1)
+            if (dealChoice == 1)
             {
-                deal();
+                dealCard();
             }
-            if(dealChoice == 2)
+            if (dealChoice == 2)
             {
                 dealCard(amount);
             }
         }
-        private static Card deal()                          // Method used to deal 1 card in try catch for error handling
+        public static Card dealCard()                          // Method used to deal 1 card in try catch for error handling
         {
             //Deals one card
             try
@@ -116,11 +116,11 @@ namespace CMP1903M_A01_2223
         }
 
         //Deals the number of cards specified by 'amount'
-        private static List<Card> dealCard(int amount)          // Similar method as above but with a counter equivalent to number of cards to deal
+        public static List<Card> dealCard(int amount)          // Similar method as above but with a counter equivalent to number of cards to deal
         {
             try
             {
-                while (amount > 0)                              
+                while (amount > 0)
                 {
 
                     Card value = cardPack[0];                   // Creates a card with value matching the card at index 0 in cardPack
@@ -128,7 +128,7 @@ namespace CMP1903M_A01_2223
                     cardPack.RemoveAt(0);                       // Removes card at same index in cardPack
 
                     dealtCards.Add(value);                      // Adds card to dealt cards list
-                                                                                    
+
                     amount--;                                   // Decrements counter
                 }
                 Console.WriteLine("Your dealt cards so far.");
@@ -136,7 +136,7 @@ namespace CMP1903M_A01_2223
                 foreach (Card card in dealtCards)
                 {
                     Console.WriteLine(card.ToString());     // Prints all dealt cards
-                }                
+                }
             }
             catch (Exception)
             {
@@ -151,7 +151,7 @@ namespace CMP1903M_A01_2223
             }
             return dealtCards;
         }
-      private static void fisherYates() //private encapsulated method for fisher yates shuffle
+        private static void fisherYates() //private encapsulated method for fisher yates shuffle
         {
             List<Card> check = new List<Card>();  // Creates a check list whose elements are used to cross check
 
@@ -185,10 +185,10 @@ namespace CMP1903M_A01_2223
             Console.WriteLine();
 
             Console.WriteLine("Your shuffled pack above.");
-      }
+        }
 
         //private encapsulated method for riffle shuffle based on real life steps with randomized card order
-        private static void riffleShuffle() 
+        private static void riffleShuffle()
         {
             int riffleCounter = 5;         // Counter for how many times shuffle needs to be done, recommended number is between 4 and 7
 
@@ -226,7 +226,7 @@ namespace CMP1903M_A01_2223
 
                         counter2--;
                     }
-                    
+
                     int iteratorLeft = 0;
                     int iteratorRight = 0;                  // Three new iterator variables
                     iterator = 52;
@@ -270,7 +270,7 @@ namespace CMP1903M_A01_2223
                     Console.WriteLine("I can shuffle now Dave");   // Prints shuffled deck
                     Console.WriteLine();
 
-                    Console.WriteLine("Your shuffled pack above.");                    
+                    Console.WriteLine("Your shuffled pack above.");
                 }
             }
         }
@@ -282,8 +282,7 @@ namespace CMP1903M_A01_2223
 
 
 
-        
-    
 
 
-      
+
+
